@@ -49,6 +49,7 @@ class IPToCountryController {
         fileOutputStream.close();
         List<String> list = file.readLines()
         int tot = list.size()
+        println("------------tot------" + tot)
         int p = 0
         int n = (list.size() / 5000)
         (0..n).eachWithIndex { int num, int i ->
@@ -69,7 +70,7 @@ class IPToCountryController {
 
             } else {
                 List<IPToCountry> countries = []
-                list.subList(p, p + 4999).each { String line ->
+                list.subList(p, p + 5000).each { String line ->
                     String[] token = line.split(",")
                     IPToCountry ipToCountry = new IPToCountry()
                     ipToCountry.ipFrom = token[0] as Double
