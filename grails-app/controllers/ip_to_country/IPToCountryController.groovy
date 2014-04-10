@@ -84,5 +84,6 @@ class IPToCountryController {
             }
             p = p + 5000
         }
+        println("-------------totl-----------" + IPToCountry.count)
     }
 }
