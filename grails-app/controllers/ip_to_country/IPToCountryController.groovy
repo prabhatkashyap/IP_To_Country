@@ -21,6 +21,17 @@ class IPToCountryController {
         render(view: 'ipAddress', model: [ipToCountry: ipToCountry])
     }
 
+    def deleteCSV() {
+        IPToCountry.list().each {
+            it.delete()
+        }
+        if (!IPToCountry.count) {
+            render "success"
+        } else {
+            render("fail")
+        }
+    }
+
     def uploadcsv() {
         render(view: '/IPToCountry/uploadcsv')
     }
@@ -29,7 +40,7 @@ class IPToCountryController {
 //        println("-------pramsasa----" + request.getFile('file').size())
         CommonsMultipartFile commonsMultipartFile = params.file as CommonsMultipartFile
         byte[] list1 = commonsMultipartFile.bytes
-        File file = File.createTempFile("tmp",".dat")
+        File file = File.createTempFile("tmp", ".dat")
         file.deleteOnExit()
         FileOutputStream fileOutputStream = new FileOutputStream(file)
         fileOutputStream.write(list1)

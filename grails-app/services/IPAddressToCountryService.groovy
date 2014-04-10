@@ -8,7 +8,6 @@ class IPAddressToCountryService {
     static transactional = false
 
     def insertDataFromFile(List<IPToCountry> list) {
-        println("===========properties----------" + list*.properties)
         list*.save()
     }
 
