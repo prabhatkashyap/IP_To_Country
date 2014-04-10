@@ -5,8 +5,12 @@ Getting Started ,
 
 First of all you have to import a CSV present in plugin web-app/countrycsv/ip-to-country.csv.
 to import csv , you need to do add few lines in Bootstrap.grooy.
-      1)Declear (def IPAddressToCountryService).
-      2)You need to add these lines in  def init block .
+                                          
+                                          
+      1)Declear def IPAddressToCountryService.
+      
+      2)You need to add these lines in  def init block in bootstrap.
+            
               if (IPToCountry.count == 0) {
             println("---------------------------started-------------------------")
             String path = '';
@@ -52,5 +56,9 @@ to import csv , you need to do add few lines in Bootstrap.grooy.
         }
         
         
-        follow the steps and restart your application , if your application is using database migration plugin then             generate changelog because this plugin add a domain class to your application and when you restart your                 application , all the CSV content are inserted to your database in table ip_to_country.
+        follow the steps and restart your application , if your application is using database migration plugin then  
+        
+        generate changelog because this plugin add a domain class to your application and when you restart your        
+        
+        application , all the CSV content are inserted to your database in table ip_to_country.
         
