@@ -25,6 +25,7 @@ class IPToCountryController {
         IPToCountry.list().each {
             it.delete()
         }
+        println("---------------dddd-------------" + IPToCountry.count)
         if (!IPToCountry.count) {
             render "success"
         } else {
