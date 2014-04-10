@@ -38,7 +38,7 @@ to import csv , you need to do add few lines in Bootstrap.grooy.
 
                 } else {
                     List<ip_to_country.IPToCountry> countries = []
-                    list.subList(p, p + 4999).each { String line ->
+                    list.subList(p, p + 5000).each { String line ->
                         String[] token = line.split(",")
                         ip_to_country.IPToCountry ipToCountry = new ip_to_country.IPToCountry()
                         ipToCountry.ipFrom = token[0] as Double
