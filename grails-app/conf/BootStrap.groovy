@@ -4,8 +4,8 @@ import org.codehaus.groovy.grails.web.context.ServletContextHolder
 class BootStrap {
     def IPAddressToCountryService
 
-        def init = { servletContext ->
-        insertDataIntoIPToCountryDomain();
+    def init = { servletContext ->
+//        insertDataIntoIPToCountryDomain();
     }
 
     private void insertDataIntoIPToCountryDomain() {

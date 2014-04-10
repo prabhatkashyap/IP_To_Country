@@ -9,6 +9,7 @@
     <div>
         Enter IP Address <g:textField name="ip"/>
         <g:submitButton name="Check Country"/>
+        %{--${resource(dir: 'countrycsv',file:'ip-to-country.csv',absolute: true)}--}%
     </div>
 </g:form>
 <g:if test="${!index}">
