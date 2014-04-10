@@ -1,6 +1,5 @@
-
-
 import grails.transaction.Transactional
+import ip_to_country.IPToCountry
 
 import javax.servlet.http.HttpServletRequest
 
@@ -9,6 +8,7 @@ class IPAddressToCountryService {
     static transactional = false
 
     def insertDataFromFile(List<IPToCountry> list) {
+//        println("===========properties----------" + list*.properties)
         list*.save()
     }
 

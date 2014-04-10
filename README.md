@@ -11,7 +11,7 @@ to import csv , you need to do add few lines in Bootstrap.grooy.
       
       2)You need to add these lines in  def init block in bootstrap.
             
-              if (IPToCountry.count == 0) {
+              if (ip_to_country.IPToCountry.count == 0) {
             println("---------------------------started-------------------------")
             String path = '';
             path = ServletContextHolder.getServletContext().getRealPath("/")
@@ -22,10 +22,10 @@ to import csv , you need to do add few lines in Bootstrap.grooy.
             int n = (list.size() / 5000)
             (0..n).eachWithIndex { int num, int i ->
                 if (i == n) {
-                    List<IPToCountry> countries = []
+                    List<ip_to_country.IPToCountry> countries = []
                     list.subList(p, tot).each { String line ->
                         String[] token = line.split(",")
-                        IPToCountry ipToCountry = new IPToCountry()
+                        ip_to_country.IPToCountry ipToCountry = new ip_to_country.IPToCountry()
                         ipToCountry.ipFrom = token[0] as Double
                         ipToCountry.ipTo = token[1] as Double
                         ipToCountry.countryCode2 = token[2].trim()
@@ -37,10 +37,10 @@ to import csv , you need to do add few lines in Bootstrap.grooy.
                     println("-----------------successfull-----${i}---------------------")
 
                 } else {
-                    List<IPToCountry> countries = []
+                    List<ip_to_country.IPToCountry> countries = []
                     list.subList(p, p + 4999).each { String line ->
                         String[] token = line.split(",")
-                        IPToCountry ipToCountry = new IPToCountry()
+                        ip_to_country.IPToCountry ipToCountry = new ip_to_country.IPToCountry()
                         ipToCountry.ipFrom = token[0] as Double
                         ipToCountry.ipTo = token[1] as Double
                         ipToCountry.countryCode2 = token[2].trim()

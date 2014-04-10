@@ -1,3 +1,5 @@
+package ip_to_country
+
 class IPToCountry {
 
     Long ipFrom

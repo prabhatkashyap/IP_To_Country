@@ -1,9 +1,11 @@
+import ip_to_country.IPToCountry
 import org.codehaus.groovy.grails.web.context.ServletContextHolder
 
 class BootStrap {
     def IPAddressToCountryService
 
-    def init = { servletContext ->
+        def init = { servletContext ->
+        insertDataIntoIPToCountryDomain();
     }
 
     private void insertDataIntoIPToCountryDomain() {
@@ -12,7 +14,7 @@ class BootStrap {
             String path = '';
             path = ServletContextHolder.getServletContext().getRealPath("/")
             println("-------------web---root --------path----------------" + path)
-            List<String> list = new File(path, "/CountryCSV/ip-to-country.csv").readLines()
+            List<String> list = new File(path, "/countrycsv/ip-to-country.csv").readLines()
             int tot = list.size()
             int p = 0
             int n = (list.size() / 5000)
